@@ -13,3 +13,5 @@ const whiskeySchema = new Schema({
 const Whiskey = mongoose.model("Whiskey", whiskeySchema);
 
 module.exports = Whiskey;
+
+

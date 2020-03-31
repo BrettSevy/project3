@@ -19,6 +19,7 @@ function Whiskeys() {
         API.getWhiskeys()
             .then(res =>
                 setWhiskeys(res.data)
+               
             )
             .catch(err => console.log(err));
     };

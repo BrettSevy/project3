@@ -1,5 +1,6 @@
 module.exports = {
-    Whiskey: require("./whiskey")
+    Whiskey: require("./whiskey"),
+    Fight: require ("./fight")
   };
 
  
