@@ -1,10 +1,10 @@
-const db = require("../models");
+const db = require("../models/");
 
 
 module.exports = {
   findAll: function(req, res) {
     db.Whiskey
-      .find(req.query)
+      .find()
       .sort({ name: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
