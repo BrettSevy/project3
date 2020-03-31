@@ -1,0 +1,23 @@
+.navbar{
+    background-color: grey;
+}
+
+#navbarNav{
+    justify-content: space-between;
+}
+
+.btn{
+    background-color:red;
+}
+
+a.nav-link{
+    color: white;
+}
+
+a.navbar-brand{
+    color: white;
+}
+
+span{
+    color: white;
+}
