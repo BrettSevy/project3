@@ -29,13 +29,3 @@ function App() {
 }
 
 export default App;
-
-// <Router>
-// <div>
-
-//     <Navbar></Navbar>
-//     <Fight></Fight>
-//     <Whiskeys></Whiskeys>
-
-// </div>
-// </Router>
