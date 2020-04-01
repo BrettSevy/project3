@@ -7,6 +7,7 @@ import Navbar from "./components/navbar/navbar";
 import Fight from "./pages/Fight";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
+import Bracket from "./pages/bracket/Bracket";
 
 function App() {
 	return (
@@ -21,6 +22,9 @@ function App() {
 					</Route>
 					<Route exact path="/fight">
 						<Fight />
+					</Route>
+					<Route exact path="/bracket">
+						<Bracket />
 					</Route>
 				</Switch>
 			</div>
