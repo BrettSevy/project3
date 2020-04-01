@@ -36,8 +36,8 @@ module.exports = {
     })
     newbracket = newbracket.map(obj => {
       obj.bracket = 5;
-      obj.drink1Votes = [];
-       obj.drink2Votes = [];
+      obj.drinkOneVotes = [];
+       obj.drinkTwoVotes = [];
       return obj;
     })
     console.log(newbracket)
