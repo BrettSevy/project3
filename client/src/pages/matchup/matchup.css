@@ -1,0 +1,13 @@
+body{
+    background-color:aliceblue;
+}
+
+#Matchup{
+    align-items: center;
+    padding: 15%;
+}
+
+.card{
+    margin: 10px;
+    padding: 5px
+}
