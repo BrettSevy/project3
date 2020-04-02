@@ -11,13 +11,6 @@ function Signup() {
 		event.preventDefault();
 		if (formObject.email && formObject.password) {
 			const data = formObject;
-			//Using Concurrently to run react server and server.js server on different ports, then trying to send
-			//Fetch post to the backend server. Problem would be solved if there were an easy way to run both the
-			//React server and backend server on the same port, or make them the same server so the route in server.js
-			//can be caught.
-			//WHen running front end, back-end wasn't running, so just using fetch on /api/registration did not work.
-			//Attempted to run both servers and send to another localhost, except fetch didn't like that
-
 			API.newUser(data)
 				.then(response => {
 					console.log("Success:", response);

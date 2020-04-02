@@ -29,7 +29,7 @@ function Login() {
 					if (data.err) {
 						window.location.replace("/");
 					} else {
-						window.location.replace("/members");
+						window.location.replace("/fight");
 					}
 				});
 		}
