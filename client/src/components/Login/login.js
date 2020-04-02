@@ -1,51 +1,96 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
+import API from "../../utils/API";
 
-export default class Login extends Component {
-  render() {
-    return (
-        <div className="container">
-      <form>
-        <h3>Sign In</h3>
+function Login() {
+	const [formObject, setFormObject] = useState({});
+	function handleInputChange(event) {
+		const { name, value } = event.target;
+		setFormObject({ ...formObject, [name]: value });
+	}
 
-        <div className="form-group">
-          <label>Email address</label>
-          <input
-            type="email"
-            className="form-control"
-            placeholder="Enter email"
-          />
-        </div>
+	function handleFormSubmit(event) {
+		const data = formObject;
 
-        <div className="form-group">
-          <label>Password</label>
-          <input
-            type="password"
-            className="form-control"
-            placeholder="Enter password"
-          />
-        </div>
+		event.preventDefault();
+		if (formObject.email && formObject.password) {
+			API.newUser(data)
+				.then(response => {
+					console.log("Success:", response);
+					console.log(response.data);
+				})
+				.catch(error => {
+					console.error("Error:", error);
+				})
+				.then(response => {
+					console.log("Success:", response);
+				})
+				.then(data => {
+					console.log(data);
+					if (data.err) {
+						window.location.replace("/");
+					} else {
+						window.location.replace("/members");
+					}
+				});
+		}
+	}
+	return (
+		<div className="container">
+			<form>
+				<h3>Sign In</h3>
 
-        <div className="form-group">
-          <div className="custom-control custom-checkbox">
-            <input
-              type="checkbox"
-              className="custom-control-input"
-              id="customCheck1"
-            />
-            <label className="custom-control-label" htmlFor="customCheck1">
-              Remember me
-            </label>
-          </div>
-        </div>
+				<div className="form-group">
+					<label>Email address</label>
+					<input
+						name="email"
+						onChange={handleInputChange}
+						type="email"
+						className="form-control"
+						placeholder="Enter email"
+					/>
+				</div>
 
-        <button type="submit" className="btn btn-primary btn-block">
-          Submit
-        </button>
-        <p className="forgot-password text-right">
-          Forgot <a href="#">password?</a>
-        </p>
-      </form>
-      </div>
-    );
-  }
+				<div className="form-group">
+					<label>Password</label>
+					<input
+						name="password"
+						onChange={handleInputChange}
+						type="password"
+						className="form-control"
+						placeholder="Enter password"
+					/>
+				</div>
+
+				<div className="form-group">
+					<div className="custom-control custom-checkbox">
+						<input
+							type="checkbox"
+							className="custom-control-input"
+							id="customCheck1"
+						/>
+						<label
+							className="custom-control-label"
+							htmlFor="customCheck1"
+						>
+							Remember me
+						</label>
+					</div>
+				</div>
+
+				<button
+					type="submit"
+					disabled={!(formObject.email && formObject.password)}
+					onClick={handleFormSubmit}
+					className="btn btn-primary btn-block"
+				>
+					Submit
+				</button>
+				<p className="forgot-password text-right">
+					Forgot <a href="#">password?</a>
+				</p>
+			</form>
+		</div>
+	);
 }
+
+export default Login;
