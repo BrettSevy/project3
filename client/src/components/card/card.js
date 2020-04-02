@@ -10,7 +10,7 @@ function Card(props) {
     <div className="card mb-3" style={{ width: 300, height: '30%' }}>
       <div className="row no-gutters">
         <div className="col-md-4">
-          <img src={whiskey.image} className="card-img" alt={whiskey.name} />
+          <img src={whiskey.image} className="card-img" alt={whiskey.name} style={{ height: '100%', width: 90 }} />
         </div>
         <div className="col-md-8">
           <div className="card-body">
