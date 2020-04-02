@@ -4,7 +4,7 @@ import Whiskeys from "./pages/Whiskeys";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/navbar/navbar";
 // import Main from "./components/main";
-import Fight from "./pages/Fight";
+import Fight from "./pages/fight";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Bracket from "./pages/bracket/Bracket";
