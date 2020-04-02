@@ -10,28 +10,32 @@ function Login() {
 
 	function handleFormSubmit(event) {
 		const data = formObject;
+		console.log("FORMOBJECT DATA:", data);
 
 		event.preventDefault();
 		if (formObject.email && formObject.password) {
-			API.newUser(data)
+			document.cookie = "loggedIn=true";
+			API.getUser(data)
 				.then(response => {
+					if (response.data.email) {
+						window.location.replace("/fight");
+					} else {
+						alert("incorrect!");
+					}
 					console.log("Success:", response);
 					console.log(response.data);
 				})
 				.catch(error => {
 					console.error("Error:", error);
-				})
-				.then(response => {
-					console.log("Success:", response);
-				})
-				.then(data => {
-					console.log(data);
-					if (data.err) {
-						window.location.replace("/");
-					} else {
-						window.location.replace("/fight");
-					}
 				});
+			// .then(data => {
+			// 	console.log(data);
+			// 	if (data.err) {
+			// 		window.location.replace("/");
+			// 	} else {
+			// 		window.location.replace("/fight");
+			// 	}
+			// });
 		}
 	}
 	return (

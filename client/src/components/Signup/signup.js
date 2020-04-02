@@ -10,6 +10,7 @@ function Signup() {
 	function handleFormSubmit(event) {
 		event.preventDefault();
 		if (formObject.email && formObject.password) {
+			document.cookie = "loggedIn=true";
 			const data = formObject;
 			API.newUser(data)
 				.then(response => {
