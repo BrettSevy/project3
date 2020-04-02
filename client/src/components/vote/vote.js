@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function Vote(props) {
     const [visible, setVisible] = useState(true);
-    const [count, setCount] = useState(0)
+    const [voteCount, setvoteCount] = useState(1)
 
     // Imported prop from card-holder
     const votedWhiskey = props.voteWhiskey;
@@ -11,22 +11,23 @@ function Vote(props) {
     let style = { display: "block" };
     if (!visible) style.display = "none";
 
-    // //Count increase function, just in case we need it
-    // function increaseAndLog(count){
-    //     setCount(count + 1)
-    //     console.log(count)
-    // }
-
     //Displays ID selected, hides VOTE Button
-    function selectedVote() {
-        console.log("whiskey ID -->" + votedWhiskey + count);
+    function selectedVote(votedWhiskey) {
+        console.log("whiskey ID --> " + votedWhiskey);
         setVisible(false);
     }
 
+    //Vote, just in case we need it
+    function increaseAndLog(voteCount) {
+        setvoteCount(voteCount + 1)
+        console.log(voteCount)
+    }
+
     return (
-        <button className="btn btn-primary btn-md" style={style} onClick={selectedVote}>
+        <button className="btn btn-primary btn-md" style={style} onClick={() => { selectedVote(votedWhiskey); increaseAndLog(voteCount); }}>
             VOTE
-        </button>
+            {/* <p>{voteCount}</p> */}
+        </button >
     );
 }
 
