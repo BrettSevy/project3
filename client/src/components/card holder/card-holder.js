@@ -17,10 +17,12 @@ function CardHolder() {
     function loadWhiskeys() {
         API.getWhiskeys()
             .then(res =>
-                setWhiskeys(res.data)
+                setWhiskeys(res.data),
             )
             .catch(err => console.log(err));
     };
+
+
     return (
         <div className="row">
             <div className="col-2">

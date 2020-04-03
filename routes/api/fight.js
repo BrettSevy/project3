@@ -7,9 +7,8 @@ router.route("/")
   .post(fightController.create);
 
 
-  
-router
-  .route("/:id")
+
+router.route("/:id")
   .get(fightController.findById)
   .put(fightController.update)
   .delete(fightController.remove);
