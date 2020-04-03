@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import API from "../../utils/API";
 
 function Vote(props) {
     const [visible, setVisible] = useState(true);
@@ -13,18 +14,23 @@ function Vote(props) {
 
     //Displays ID selected, hides VOTE Button
     function selectedVote(votedWhiskey) {
-        console.log("whiskey ID --> " + votedWhiskey);
         setVisible(false);
     }
 
     //Vote, just in case we need it
     function increaseAndLog(voteCount) {
         setvoteCount(voteCount + 1)
-        console.log(voteCount)
+    }
+
+    function handleClick() {
+        API.updateFight(votedWhiskey);
+        selectedVote(votedWhiskey);
+        increaseAndLog(voteCount);
     }
 
     return (
-        <button className="btn btn-primary btn-md" style={style} onClick={() => { selectedVote(votedWhiskey); increaseAndLog(voteCount); }}>
+        <button className="btn btn-primary btn-md" style={style} onClick={handleClick}>
+            {/* <button className="btn btn-primary btn-md" onClick={() => { selectedVote(votedWhiskey); increaseAndLog(voteCount); }}> */}
             VOTE
             {/* <p>{voteCount}</p> */}
         </button >
