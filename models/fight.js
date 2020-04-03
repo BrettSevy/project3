@@ -22,7 +22,7 @@ const FightSchema = new Schema({
 			ref: "user"
 		}
 	],
-	bracket: {
+	round: {
 		type: Number,
 		required: true
 	}

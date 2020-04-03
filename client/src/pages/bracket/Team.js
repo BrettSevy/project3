@@ -11,8 +11,8 @@ module.exports = [{
     "match": 1,
     "players":
         [
-            { "id": 1, "name": "Team 1", "seed": 1 },
-            { "id": 16, "name": "Team 16", "seed": 16 }
+            { "id": 1, "name": "Team 1" },
+            { "id": 16, "name": "Team 16", }
         ],
     "score": [1, 16]
 },
