@@ -39,11 +39,12 @@ function Login() {
 		}
 	}
 	return (
-		<div className="container">
-			<form>
+		<div className="container mt-5">
+			<form className="auth-inner">
+
 				<h3>Sign In</h3>
 
-				<div className="form-group">
+				<div className="form-group mt-4">
 					<label>Email address</label>
 					<input
 						name="email"
@@ -90,7 +91,7 @@ function Login() {
 					Submit
 				</button>
 				<p className="forgot-password text-right">
-					Forgot <a href="#">password?</a>
+					Not Register? <a href="/signup">Create Account</a>
 				</p>
 			</form>
 		</div>

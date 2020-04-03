@@ -69,7 +69,7 @@ html,
 }
 
 .auth-wrapper .form-control:focus {
-  border-color: #167bff;
+  border-color: pink;
   box-shadow: none;
 }
 
