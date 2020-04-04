@@ -35,14 +35,14 @@ module.exports = {
       return _.zipObject(values, pair)
     })
     newbracket = newbracket.map(obj => {
-      obj.bracket = 5;
+      obj.round = 1;
       obj.drinkOneVotes = [];
       obj.drinkTwoVotes = [];
       return obj;
     })
     console.log(newbracket)
     db.Fight
-      .createMany(newbracket)
+      .insertMany(newbracket)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

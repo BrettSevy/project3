@@ -27,8 +27,8 @@ function App() {
 						{document.cookie.match(/^.*loggedIn=true.*$/) ? (
 							<Fight />
 						) : (
-							<h1>Sign in</h1>
-						)}
+								<h1>Sign in</h1>
+							)}
 					</Route>
 					<Route exact path="/bracket">
 						<Bracket />
