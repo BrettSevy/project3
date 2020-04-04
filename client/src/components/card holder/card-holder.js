@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
 
 
-function CardHolder() {
+function CardHolder(props) {
     // Setting our component's initial state
     const [whiskeys, setWhiskeys] = useState([])
 
@@ -15,11 +15,16 @@ function CardHolder() {
 
     // Loads all whiskeys and sets them to whiskeys
     function loadWhiskeys() {
-        API.getWhiskeys()
-            .then(res =>
-                setWhiskeys(res.data),
-            )
-            .catch(err => console.log(err));
+
+        API.getFight(props.whiskeyId).then(res => {
+            var fight = res.data
+            setWhiskeys([fight.drinkOne, fight.drinkTwo])
+        }).catch(err => console.log(err));
+        // API.getWhiskeys()
+        //     .then(res =>
+        //         setWhiskeys(res.data),
+        //     )
+        //     .catch(err => console.log(err));
     };
 
 

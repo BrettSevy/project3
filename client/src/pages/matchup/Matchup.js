@@ -5,12 +5,12 @@ import Backbutton from '../../components/backbutton/Backbutton';
 import FightNav from '../../components/FightNav/index'
 
 
-function Matchup() {
+function Matchup(props) {
     return (
         <div>
             <FightNav />
             <div className="container-fluid" id="Matchup">
-                <CardHolder />
+                <CardHolder whiskeyId={props.match.params.id} />
                 <Backbutton />
             </div>
         </div>

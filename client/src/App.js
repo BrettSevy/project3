@@ -34,9 +34,7 @@ function App() {
 					<Route exact path="/bracket">
 						<Bracket />
 					</Route>
-					<Route exact path="/matchup">
-						<Matchup />
-					</Route>
+					<Route exact path="/matchup/:id" component={Matchup} />
 				</Switch>
 			</div>
 		</Router>
