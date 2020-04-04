@@ -24,6 +24,7 @@ function Vote(props) {
 
     function handleClick() {
         API.updateFight(votedWhiskey);
+        // prop.fightID
         selectedVote(votedWhiskey);
         increaseAndLog(voteCount);
     }

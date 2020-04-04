@@ -47,15 +47,23 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   update: function (req, res) {
-    console.log('IN THE CONTROLLER')
-
+    console.log(req.params.id)
+    //get actual user from schema
+    db.Fight.findById(req.params.id).then(data => {
+      if (req.body.drinkChoice === data.drinkOne) {
+        db.Fight
+          .findOneAndUpdate({ _id: req.params.id }, { $push: { drinkOneVotes: req.cookie.id } })
+          .then(dbModel => res.json(dbModel))
+          .catch(err => res.status(422).json(err));
+      } else if (req.body.drinkChoice === data.drinkTwo) {
+        db.Fight
+          .findOneAndUpdate({ _id: req.params.id }, { $push: { drinkTwoVotes: req.cookie.id } })
+          .then(dbModel => res.json(dbModel))
+          .catch(err => res.status(422).json(err));
+      }
+    })
     // create a Vote that has a whiskey ID associated with it
     // to see how many votes a whiskey has, sum all the votes with that whiskeys/user ID
-
-    db.Fight
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
   },
   remove: function (req, res) {
     db.Fight

@@ -5,6 +5,7 @@ import Vote from "../vote/vote"
 function Card(props) {
   const whiskey = props.whiskey;
   const whiskeyVote = props.whiskey._id;
+  //fightid.prop
 
   return (
     <div className="card mb-3" style={{ width: 300, height: '30%' }}>
