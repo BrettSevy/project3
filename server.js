@@ -5,6 +5,16 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+var session = require('client-sessions');
+
+app.use(session({
+	cookieName: 'session',
+	secret: 'random_string_goes_here',
+	duration: 30 * 60 * 1000,
+	activeDuration: 5 * 60 * 1000,
+}));
+
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -21,6 +31,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/whiskeylist", {
 });
 
 // Start the API server
-app.listen(PORT, function() {
+app.listen(PORT, function () {
 	console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });

@@ -39,9 +39,13 @@ export default {
 	},
 
 	updateFight: function (id) {
+		// updateFight: function (id, drinkChoice) {
+
 		console.log('in the API');
 		console.log(id)
 		return axios.put("/api/fight/" + id);
+
+		// return axios.put("/api/fight/" + id, drinkChoice);
 	},
 
 	deleteFight: function (id) {
