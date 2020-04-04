@@ -20,9 +20,14 @@ module.exports = {
   },
   findById: function (req, res) {
     db.Fight
-
-      .findById(req.params.id).populate("Whiskey")
-      .then(dbModel => res.json(dbModel))
+      .findById(req.params.id)
+      .populate("drinkOne")
+      .populate("drinkTwo")
+      .then(dbModel => {
+        console.log(req.params.id)
+        console.log(dbModel)
+        res.json(dbModel)
+      })
       .catch(err => res.status(422).json(err));
   },
   create: function (req, res) {

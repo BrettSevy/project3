@@ -35,7 +35,7 @@ export default {
 	},
 
 	getFight: function (id) {
-		return axios.get("/api/fight/", + id);
+		return axios.get(`/api/fight/${id}`);
 	},
 
 	updateFight: function (id) {

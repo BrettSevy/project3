@@ -3,16 +3,23 @@ import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 import { List, ListItem } from "../components/List";
 import { Link } from "react-router-dom";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Modal } from "react-bootstrap";
+
 
 // import whiskey list
 
 function Fight() {
 	const [whiskeyState, setWhiskeyState] = useState({
+		fightId: "",
 		count: 0,
 		options: [],
 		selected: [],
 	});
+	const [show, setShow] = useState(false);
+
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
+
 
 	function generateInput() {
 		let inputArray = [];
@@ -79,7 +86,15 @@ function Fight() {
 		e.preventDefault()
 		var data = whiskeyState.selected.map(id => id.id)
 		API.createFight({ list: data })
-			.then(function (res) { console.log(res) })
+			.then(function (res) {
+				const fightId = res.data[0]._id;
+				setWhiskeyState({
+					...whiskeyState,
+					fightId
+				})
+
+				handleShow();
+			})
 
 
 	}
@@ -118,6 +133,19 @@ function Fight() {
 				<Button onClick={handleFormSubmit}>submit</Button>
 				{/* new input forms comes up based on how many whiskeys they say they have to add in "team names" */}
 			</Form>
+			<Modal show={show} onHide={handleClose} animation={false}>
+				<Modal.Header closeButton>
+					<Modal.Title>Your Fight is Ready</Modal.Title>
+				</Modal.Header>
+				<Modal.Body></Modal.Body>
+				<Modal.Footer>
+					<Link to={`/matchup/${whiskeyState.fightId}`}>
+						<Button variant="primary" onClick={handleClose}>
+							Go to Fight!
+						</Button>
+					</Link>
+				</Modal.Footer>
+			</Modal>
 		</div>
 	);
 }
