@@ -38,14 +38,12 @@ export default {
 		return axios.get(`/api/fight/${id}`);
 	},
 
-	updateFight: function (id) {
-		// updateFight: function (id, drinkChoice) {
+	// updateFight: function (id, req) {
+	updateFight: function (id, drinkChoice, userid) {
+		// console.log(document.cookie);
+		// return axios.put("/api/fight/" + id);
 
-		console.log('in the API');
-		console.log(id)
-		return axios.put("/api/fight/" + id);
-
-		// return axios.put("/api/fight/" + id, drinkChoice);
+		return axios.put("/api/fight/" + id, { drinkChoice, userid });
 	},
 
 	deleteFight: function (id) {
