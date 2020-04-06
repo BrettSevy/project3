@@ -7,6 +7,8 @@ import API from "../../utils/API";
 function CardHolder(props) {
     // Setting our component's initial state
     const [whiskeys, setWhiskeys] = useState([])
+    const [fightID, setfightID] = useState()
+
 
     // Load all whiskeys and store them with setWhiskeys
     useEffect(() => {
@@ -18,6 +20,7 @@ function CardHolder(props) {
 
         API.getFight(props.whiskeyId).then(res => {
             var fight = res.data
+            setfightID(res.data._id)
             setWhiskeys([fight.drinkOne, fight.drinkTwo])
         }).catch(err => console.log(err));
         // API.getWhiskeys()
@@ -35,7 +38,7 @@ function CardHolder(props) {
             <div className="col-8">
                 <div className="row justify-content-around">
                     {whiskeys.map(whiskey => (
-                        <Card whiskey={whiskey} />
+                        <Card whiskey={whiskey} fightID={fightID} />
                     ))}
                 </div>
             </div>

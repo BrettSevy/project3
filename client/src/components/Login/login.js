@@ -14,10 +14,10 @@ function Login() {
 
 		event.preventDefault();
 		if (formObject.email && formObject.password) {
-			document.cookie = "loggedIn=true";
 			API.getUser(data)
 				.then(response => {
 					if (response.data.email) {
+						document.cookie = "userid=" + response.data._id;
 						window.location.replace("/fight");
 					} else {
 						alert("incorrect!");
