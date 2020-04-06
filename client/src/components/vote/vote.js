@@ -54,7 +54,7 @@ function Vote(props) {
                 {/* // <button className="btn btn-primary btn-md" onClick={() => { selectedVote(votedWhiskey); increaseAndLog(voteCount); }}> */}
                 VOTE
             </button>
-            <p>Votes: {fightData.length}</p>
+            <p>Vote Count: {fightData.length}</p>
         </div>
     );
 }
