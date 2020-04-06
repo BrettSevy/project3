@@ -46,11 +46,10 @@ module.exports = {
       obj.drinkTwoVotes = [];
       return obj;
     })
-    console.log(newbracket)
     db.Fight
       .insertMany(newbracket)
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .catch(err => { console.log(err); res.status(422).json(err) });
   },
   update: async function (req, res) {
     //console.log(req.params.id)
