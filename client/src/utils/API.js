@@ -26,6 +26,10 @@ export default {
 		return axios.post("/api/user/login", userData);
 	},
 
+	getFights: function () {
+		return axios.get("/api/fight");
+	},
+
 	findFight: function (fightData) {
 		return axios.get("/api/fight", fightData);
 	},

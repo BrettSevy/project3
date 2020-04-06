@@ -7,19 +7,19 @@ import { Link } from "react-router-dom";
 function Whiskeys() {
     // Setting our component's initial state
     const [whiskeys, setWhiskeys] = useState([])
-    
+
 
     // Load all whiskeys and store them with setWhiskeys
     useEffect(() => {
         loadWhiskeys()
     }, [])
 
-    // Loads all whiskeys and sets them to whiskeys
+
     function loadWhiskeys() {
         API.getWhiskeys()
             .then(res =>
                 setWhiskeys(res.data)
-               
+
             )
             .catch(err => console.log(err));
     };

@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Bracket from "./pages/bracket/Bracket";
 import Matchup from "./pages/matchup/Matchup";
+import Fights from "./pages/fights";
 
 
 //added matchup page, will need to be routed with a unique ID in each unique matchup
@@ -33,6 +34,9 @@ function App() {
 					</Route>
 					<Route exact path="/bracket">
 						<Bracket />
+					</Route>
+					<Route exact path="/fights">
+						<Fights />
 					</Route>
 					<Route exact path="/matchup/:id" component={Matchup} />
 				</Switch>
