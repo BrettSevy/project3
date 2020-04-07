@@ -24,18 +24,18 @@ function FightNav() {
         <div className="container">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a className="nav-item nav-link" href="../pages/fight.js">
+              <a className="nav-item nav-link" href="/fights">
                 Fight List
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-item nav-link" href="/fight">
-                Tournament
+                New List
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-item nav-link" href="/fight">
-                Tournament
+              <a className="nav-item nav-link" href="/Bracket">
+                Bracket
               </a>
             </li>
             <li className="nav-item">

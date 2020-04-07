@@ -10,11 +10,12 @@ function Signup() {
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.email && formObject.password) {
-      document.cookie = "loggedIn=true";
       const data = formObject;
       API.newUser(data)
-        .then(response => {
-          console.log("Success:", response);
+      .then(response => {
+        console.log("Success:", response);
+        document.cookie = "loggedIn=true";
+        window.location.replace("/fight")
           console.log(response.data);
         })
         .catch(error => {

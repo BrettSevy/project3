@@ -7,6 +7,7 @@ import { Button } from "react-bootstrap";
 
 
 function Fights() {
+    
     // Setting our component's initial state
     const [fights, setFights] = useState({
         fightId: ""

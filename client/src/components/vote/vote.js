@@ -46,6 +46,7 @@ function Vote(props) {
         // prop.fightID
         selectedVote(votedWhiskey);
         // increaseAndLog(voteCount);
+        window.location.reload();
     }
 
     return (

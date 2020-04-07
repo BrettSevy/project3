@@ -3,6 +3,7 @@ import Login from "../components/Login/login";
 import HomeNav from "../components/HomeNav/index";
 
 
+
 function Home() {
 	return (
 		<div>
