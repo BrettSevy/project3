@@ -32,10 +32,10 @@ function CardHolder(props) {
 
 
     return (
-        <div className="row">
+        <div className="row card-holder">
             <div className="col-2">
             </div>
-            <div className="col-8">
+            <div className="col-12">
                 <div className="row justify-content-around">
                     {whiskeys.map(whiskey => (
                         <Card whiskey={whiskey} fightID={fightID} />

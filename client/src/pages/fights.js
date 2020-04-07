@@ -32,9 +32,11 @@ function Fights() {
 
 
     return (
-        <div>
-            <div>
-                <h1>fightList</h1>
+        <div className="card-inner">
+            <div >
+                <h1>Fight List</h1>
+                <h5>Find your current bracket or join new a one.</h5>
+                <hr></hr>
             </div>
             {fights.length ? (
                 <List>

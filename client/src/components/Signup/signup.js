@@ -23,7 +23,7 @@ function Signup() {
     }
   }
   return (
-    <div className="container mt-5">
+    <div className="container">
       <form className="auth-inner">
 
         <div className="container text-center ">

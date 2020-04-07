@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Form, Button, Modal } from "react-bootstrap";
 
 
+
 // import whiskey list
 
 function Fight() {
@@ -99,9 +100,9 @@ function Fight() {
 
 	}
 
-
 	return (
-		<div>
+		
+		<div className="card-inner">
 			<Form>
 				<Form.Group controlId="tournamentName">
 					<Form.Label>Name of your bracket</Form.Label>

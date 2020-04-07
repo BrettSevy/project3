@@ -6,34 +6,53 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function HomeNav() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-default">
         <img
           alt=""
           src="logo192.png"
           width="30"
           height="30"
-          className="d-inline-block align-top"
+          className="d-inline-block align-top animated infinite pulse delay-2s"
         />
 
-        <nav class="navbar navbar-dark bg-dark">
-          <a class="navbar-brand">
-            Whisket
-          </a>
+        <nav class="navbar navbar-default">
+          <a class="navbar-brand">Whisket</a>
         </nav>
 
         <div className="container">
+          <div className="navbar-nav ml-auto">
+            <a className="nav-item nav-link" href="/fight">
+              Tournament
+            </a>
+            <a className="nav-item nav-link" href="/signup">
+              Sign Up
+            </a>
+          </div>
+
+          {/* <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <a className="nav-item nav-link" href="/fight">
+                Tournament
+              </a>
+            </li>
+          </ul> */}
+
+          {/* <div className="container">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <a className="nav-item nav-link" href="/fight">
                 Tournament
               </a>
             </li>
+          </ul> */}
+
+          {/* <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <a className="nav-item nav-link" href="/signup">
-                Signup
+                Sign Up
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </nav>
     </div>
