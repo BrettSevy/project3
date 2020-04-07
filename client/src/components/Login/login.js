@@ -39,7 +39,7 @@ function Login() {
 		}
 	}
 	return (
-		<div className="container mt-5">
+		<div className="container">
 			<form className="auth-inner">
 
 				<h3>Sign In</h3>

@@ -1,7 +1,18 @@
-.navbar {
-	background-color: grey;
+.navbar-default {
+    background-color: #0D0C0D;
+	color: white;
 }
 
 #navbarNav {
 	justify-content: space-between;
 }
+
+.pulse {
+	animation-duration: 3s;
+	animation-delay: 2s;
+	animation-iteration-count: infinite;
+  }
+
+/* .nav-color{
+	color: white;
+} */
